@@ -1,0 +1,26 @@
+CSC426 PRACTICAL ASSIGNMENT
+
+TITLE:
+GUI Calculator Application
+
+TOOLS USED:
+
+* Python
+* Tkinter
+* GitHub
+
+OBJECTIVE:
+To develop a GUI calculator capable of performing arithmetic operations.
+
+FEATURES:
+
+* Addition
+* Subtraction
+* Multiplication
+* Division
+* Modulus
+* Exponentiation
+* Clear Function
+
+CONCLUSION:
+The calculator was successfully implemented using Python Tkinter and uploaded to GitHub.
