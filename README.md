@@ -2,7 +2,7 @@
 
 ## Student Information
 
-Name: Your Name
+Name: Oreoluwa Clinton Samuel
 
 Course: CSC426
 
