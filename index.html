@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSC426 — Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <aside class="panel-left" aria-hidden="true">
+    <div class="brand">CSC<span>426</span></div>
+    <div class="panel-center">
+      <h2>Welcome<br><em>back.</em></h2>
+      <p>Sign in to access your coursework, practicals, and project repositories for the semester.</p>
+    </div>
+    <div class="dots-grid"></div>
+  </aside>
+
+  <main class="panel-right">
+    <div class="form-wrapper">
+
+      <section class="auth-section" id="loginSection">
+        <header class="form-header">
+          <span class="eyebrow">Student Portal</span>
+          <h1>Sign in</h1>
+        </header>
+
+        <div class="demo-hint" role="note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Demo &mdash; username: <strong>student</strong> &nbsp;|&nbsp; password: <strong>Pass@123</strong>
+        </div>
+
+        <div class="field" id="field-username">
+          <label for="username">Username</label>
+          <div class="input-wrap">
+            <input type="text" id="username" name="username" placeholder="e.g. student"
+              autocomplete="username" aria-describedby="username-error" aria-required="true" />
+            <svg class="input-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="field-error" id="username-error" role="alert" aria-live="polite"></div>
+        </div>
+
+        <div class="field" id="field-password">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input type="password" id="password" name="password" placeholder="Enter your password"
+              autocomplete="current-password" aria-describedby="password-error" aria-required="true" />
+            <button class="toggle-pw" type="button" id="togglePw" aria-label="Show password" aria-pressed="false">
+              <svg id="eyeOpen" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg id="eyeClosed" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
+          <div class="pw-strength" id="password-strength" style="display:none">
+            <div class="pw-bars">
+              <div class="pw-bar" id="bar1"></div>
+              <div class="pw-bar" id="bar2"></div>
+              <div class="pw-bar" id="bar3"></div>
+              <div class="pw-bar" id="bar4"></div>
+            </div>
+            <span class="pw-label" id="pwLabel"></span>
+          </div>
+          <div class="field-error" id="password-error" role="alert" aria-live="polite"></div>
+        </div>
+
+        <div class="options-row">
+          <label class="remember-label">
+            <input type="checkbox" id="remember" /> Remember me
+          </label>
+          <button class="link-btn" type="button" id="forgotBtn">Forgot password?</button>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn-primary" type="button" id="loginBtn">
+            <span class="spinner" id="spinner" aria-hidden="true"></span>
+            <span id="loginBtnText">Sign in</span>
+          </button>
+          <button class="btn-secondary" type="button" id="resetBtn">Reset / Cancel</button>
+        </div>
+
+        <div class="divider"><span>or</span></div>
+        <p class="register-cta">New student? <button class="link-btn" type="button" id="registerLink">Create account</button></p>
+      </section>
+
+      <section class="auth-section hidden" id="successSection" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1a6642" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 class="success-title">You're in!</h2>
+        <p class="success-body">Welcome back, <strong id="welcomeName"></strong>. You have successfully signed in to the CSC426 portal.</p>
+        <button class="btn-secondary" type="button" id="logoutBtn" style="margin-top:1.5rem">Sign out</button>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="toastIcon" aria-hidden="true"></svg>
+    <span id="toastMsg"></span>
+  </div>
+
+  <script src="js/validate.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
