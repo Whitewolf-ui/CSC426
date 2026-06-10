@@ -24,3 +24,29 @@ FEATURES:
 
 CONCLUSION:
 The calculator was successfully implemented using Python Tkinter and uploaded to GitHub.
+TITLE:
+Web-Based Login Authentication Application
+
+TOOLS USED:
+* HTML
+* CSS
+* JavaScript
+* Node.js
+* Render (Deployment)
+* GitHub
+
+OBJECTIVE:
+To develop a responsive web login application with authentication and validation.
+
+FEATURES:
+* Username and Password input fields
+* Submit/Login and Reset/Cancel buttons
+* Input validation (empty fields, wrong credentials)
+* Success and error messages
+* Responsive user interface
+
+DEPLOYED URL:
+https://csc426-login-sytb.onrender.com
+
+CONCLUSION:
+The login app was successfully built and deployed on Render.
